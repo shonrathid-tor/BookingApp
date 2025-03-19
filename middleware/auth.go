@@ -10,14 +10,14 @@ import (
 	"github.com/golang-jwt/jwt/v4"
 )
 
-// Load environment variables
+// Load .ENV FILE
 func init() {
 	config.LoadEnv()
 }
 
 var secretKey = []byte(config.GetEnv("SECRET_KEY", "default_secret_key"))
 
-// GenerateToken creates a JWT token for authentication
+// GenerateToken  JWT token 
 func GenerateToken(userID uint) (string, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"user_id": userID,

@@ -26,7 +26,7 @@ func Register(c *gin.Context) {
 	config.DB.Create(&user)
 
 	c.JSON(http.StatusOK, gin.H{
-		"message ": " User refisterd succssfull !!!"})
+		"message ": " User register succssfull !!!"})
 
 }
 
